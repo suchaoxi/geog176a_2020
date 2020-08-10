@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">My beautiful website</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="geog176A.html">Projects</a>
+</li>
+<li>
+  <a href="my_info.html">My info</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/suchaoxi">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><br><br></p>
+<div class="section level4">
+<h4><i class="fas  fa-globe " style="color:green;"></i> <strong>Mike Johnson</strong> <a href="https://github.com/mikejohnson51/mikejohnson51.github.io">repo</a> — <a href="http://mikejohnson51.github.io">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Instructor</li>
+<li><i class="fas  fa-university "></i> Water Resources</li>
+<li><i class="fas  fa-map-marker "></i> 34.41, -119.84</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-database " style="color:blue;"></i> <strong>Matt Feliciano</strong> <a href="">repo</a> — <a href="">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Teaching Assistant</li>
+<li><i class="fas  fa-university "></i></li>
+<li><i class="fas  fa-map-marker "></i> 40.1, -74.4</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-traffic-light " style="color:red;"></i> <strong>Jiwon Baik</strong> <a href="">repo</a> — <a href="">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Teaching Assistant</li>
+<li><i class="fas  fa-university "></i></li>
+<li><i class="fas  fa-map-marker "></i> 35.9, 127.7</li>
+</ul>
+<hr />
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-space-shuttle " style="color:green;"></i> <strong>Tyler Chia</strong> <a href="https://github.com/TylerChia/TylerChia">repo</a> — <a href="https://tylerchia.github.io/TylerChia/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Second Year Econ and Statistics and Data Science Majors</li>
+<li><i class="fas  fa-university "></i> Econometrics</li>
+<li><i class="fas  fa-map-marker "></i> 37.46, -122.24</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-hand-peace " style="color:blue;"></i> <strong>Matthew Coleman</strong> <a href="https://github.com/matthewbcoleman">repo</a> — <a href="https://matthewbcoleman.github.io/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year Statistics and Data Science</li>
+<li><i class="fas  fa-university "></i> Health</li>
+<li><i class="fas  fa-map-marker "></i> 34.41, -119.86</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-train " style="color:grey;"></i> <strong>Terrance Hwang</strong> <a href="https://github.com/TerranceHwang/geog176a-lab01">repo</a> — <a href="https://terrancehwang.github.io/geog176a-lab01/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year Geography Major</li>
+<li><i class="fas  fa-university "></i> Urban Planning</li>
+<li><i class="fas  fa-map-marker "></i> 37.21, -121.85</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-server " style="color:green;"></i> <strong>Justin Singh-Mohudpur</strong> <a href="https://github.com/program--/geog176a">repo</a> — <a href="https://geog176a.justinsingh.me/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year Mathematics Major</li>
+<li><i class="fas  fa-university "></i> Cryptography</li>
+<li><i class="fas  fa-map-marker "></i> 38.27, -121.95 <br></li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-tree " style="color:green;"></i> <strong>Emily Wapman</strong> <a href="https://github.com/ewapman/ewapman.github.io">repo</a> — <a href="https://ewapman.github.io">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Third Year, Biology</li>
+<li><i class="fas  fa-university "></i> Ecology</li>
+<li><i class="fas  fa-map-marker "></i> 37.68, 121.77</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-anchor " style="color:grey;"></i> <strong>Wesley Noble</strong> <a href="https://github.com/Wes-Noble/Wes-Noble.github.io">repo</a> — <a href="wes-noble.github.io/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year Physical Geography w/ Ocean Science Emphasis &amp; Environmental Studies major</li>
+<li><i class="fas  fa-university "></i> Biogeochemistry</li>
+<li><i class="fas  fa-map-marker "></i> 34.41, 119.86</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-anchor " style="color:red;"></i> <strong>Aine Roonan</strong> <a href="https://github.com/aineroonan/aineroonan.github.io">repo</a> — <a href="https://aineroonan.github.io">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Political Science</li>
+<li><i class="fas  fa-university "></i> Environmental Studies</li>
+<li><i class="fas  fa-map-marker "></i> 34.4140, -119.8489</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-balance-scale " style="color:blue;"></i> <strong>Chi Zhang</strong> <a href="https://github.com/NeedCola/NeedCola.github.io">repo</a> —<a href="https://needcola.github.io/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Third Year, Geography Major</li>
+<li><i class="fas  fa-university "></i> Oceanography</li>
+<li><i class="fas  fa-map-marker "></i> 32.90, 115.82</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-paper-plane " style="color:black;"></i> <strong>Catherine Rauch</strong> <a href="https://github.com/catherinerauch/catherinerauch.github.io">repo</a> —<a href="https://catherinerauch.github.io/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Statistics and Data Science</li>
+<li><i class="fas  fa-university "></i> Interrupted Time Series</li>
+<li><i class="fas  fa-map-marker "></i> 37.87, -122.46</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-hand-spock " style="color:red;"></i> <strong>Mika Leslie</strong> <a href="https://github.com/mikaleslie/mikaleslie.github.io">repo</a> —<a href="https://mikaleslie.github.io/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Environmental Studies Major</li>
+<li><i class="fas  fa-university "></i> Sustainability</li>
+<li><i class="fas  fa-map-marker "></i> -35.34, 149.08</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-hand-peace " style="color:teal;"></i> <strong>Meagan Brown</strong> <a href="https://github.com/meaganbrown/meaganbrown.github.io">repo</a> —<a href="https://meaganbrown.github.io/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i>Fourth Year, Environmental Studies, Emphasis in Geography</li>
+<li><i class="fas  fa-university "></i> Water Resource Management</li>
+<li><i class="fas  fa-map-marker "></i> 34.40956615, -119.86271152508787</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-sun " style="color:maroon;"></i> <strong>Kiki Takeuchi</strong> <a href="https://github.com/ktakeuchi2/ktakeuchi2.github.io">repo</a> — <a href="https://ktakeuchi2.github.io/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Environmental Studies B.S.</li>
+<li><i class="fas  fa-university "></i> Coral Reefs</li>
+<li><i class="fas  fa-map-marker "></i> 37.89, -122.03</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-space-shuttle " style="color:teal;"></i> <strong>Johann Ayala-Vargas</strong> <a href="https://github.com/Johannayala-vargas/Johannayala-vargas">repo</a> — <a href="http://Johannayala-vargas.github.io">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Physical Geography B.S.</li>
+<li><i class="fas  fa-university "></i> Geographic Information Systems</li>
+<li><i class="fas  fa-map-marker "></i> 35.03, -120.49</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-globe " style="color:blue;"></i> <strong>Kaitlyn Fu</strong> <a href="https://github.com/kaitlynf/kaitlynf.github.io">repo</a> — <a href="https://kaitlynf.github.io">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Global Studies and Geography</li>
+<li><i class="fas  fa-university "></i> Urban Planning</li>
+<li><i class="fas  fa-map-marker "></i> 37.33, -121.89</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-heart " style="color:red;"></i> <strong>Van Jackson</strong> <a href="https://github.com/van-jackson/van-jackson.github.io">repo</a> — <a href="https://van-jackson.github.io/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Geography</li>
+<li><i class="fas  fa-university "></i> Geographical Information Systems</li>
+<li><i class="fas  fa-map-marker "></i> 33.81, -117.81</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-frog " style="color:pink;"></i> <strong>Xuefei Gao</strong> <a href="https://github.com/XuefeiG/XuefeiG.github.io">repo</a> — <a href="https://XuefeiG.github.io/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Environmental Studies</li>
+<li><i class="fas  fa-university "></i> Botany</li>
+<li><i class="fas  fa-map-marker "></i> 39.9042, 116.4074</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-tree " style="color:blue;"></i> <strong>Jovany Cota</strong> <a href="https://github.com/jovanycota/-jovanycota-.github.io">repo</a>—<a href="https://jovanycota.github.io/-jovanycota-.github.io/">website</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Third year, Geography major</li>
+<li><i class="fas  fa-university "></i> Poverty &amp; inequality</li>
+<li><i class="fas  fa-map-marker "></i> 34.4130, -119.8660</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-heart " style="color:pink;"></i> <strong>Leslie Alonzo</strong> <a href="https://github.com/LeslieAlonzo98/LeslieAlonzo98">repo</a> — <a href="https://lesliealonzo98.github.io/LeslieAlonzo98/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Geography</li>
+<li><i class="fas  fa-university "></i> Human Geography and Food Systems</li>
+<li><i class="fas  fa-map-marker "></i> 33.1347, -117.072</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-space-shuttle " style="color:gray;"></i> <strong>Barush Martinez</strong> <a href="https://github.com/Barush44/github.io">repo</a> — <a href="https://barush44.github.io/github.io/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Geography B.S.</li>
+<li><i class="fas  fa-university "></i> Oceanography</li>
+<li><i class="fas  fa-map-marker "></i> 32.77, -117.07</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-fish " style="color:teal;"></i> <strong>Kyler Plouffe</strong> <a href="https://github.com/kplouffe/kplouffe">repo</a> — <a href="https://kplouffe.github.io/kplouffe/">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Aquatic Biology</li>
+<li><i class="fas  fa-university "></i> Aquaculture</li>
+<li><i class="fas  fa-map-marker "></i> 34.412968, -119.865065</li>
+</ul>
+</div>
+<div class="section level4">
+<h4><i class="fas  fa-sun " style="color:purple;"></i> <strong>Chelsey Su</strong> <a href="suchaoxi.github.io/geog176a_2020/">repo</a> — <a href="">webpage</a></h4>
+<ul>
+<li><i class="fas  fa-user "></i> Fourth Year, Geography B.A.</li>
+<li><i class="fas  fa-university "></i> Gographical Information System</li>
+<li><i class="fas  fa-map-marker "></i> 34.05, -118.17</li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
