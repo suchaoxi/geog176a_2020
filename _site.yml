@@ -10,6 +10,8 @@ navbar:
     href: geog176A.html
   - text: "My info"
     href: my_info.html
+  - text: "Lab 2"
+    href: lab-02.html
   right:
   - icon: fa-github
     href: https://github.com/suchaoxi
