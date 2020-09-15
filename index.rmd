@@ -24,7 +24,7 @@ title: "About Me"
 **My projects**
 </center>
 <center> 
-[GitHub](https://https://github.com/suchaoxi)
+[GitHub](https://github.com/suchaoxi)
 </center>
 
 ---
