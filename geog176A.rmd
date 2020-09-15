@@ -6,7 +6,7 @@ As a grography major, I took this GIS class as a requirement. I didn't know how 
 
 ---
 
-## [my project website]
+## [my project website](https://suchaoxi.github.io/geog176a_2020/index.html)
 
 - I learned how to create new files/directory from a different route.
 - I learned how to built a static users site with Gibhub Pages.
