@@ -10,6 +10,8 @@ title: "About Me"
    
    Through out my life, geography has been an interesting subject to me. As I am taking geographical information system course(Geog176A), I found out that coding made data analysis so much easier. I am now able to analyze some data and put them into figures through **Rstudio**.
 
+---
+
 <center> 
 **Contact me**
 </center>
@@ -17,7 +19,6 @@ title: "About Me"
 [Email](chelsey5620@gmail.com) **|**
 [Facebook](https://www.facebook.com/chelsey.y.su) **|**
 [Instagram](https://www.instagram.com/suchaoxi/?hl=en)
-
 </center>
 <center> 
 **My projects**
@@ -26,6 +27,7 @@ title: "About Me"
 [GitHub](https://https://github.com/suchaoxi)
 </center>
 
+---
 
 Here's a photo of me.
 
