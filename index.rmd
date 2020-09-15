@@ -6,11 +6,29 @@ title: "About Me"
 # Hi, Chelsey Su it is.
 </center>
 
-  Welcome to the very first website in my life! My name is Chelsey Su. I'm currently majoring in Geography in UC Santa Barbara. I love singing, taking photos, playing, and listening to Ted Talks. Just like everyone else, baking had become one of my hobbies during this pandemic. 
+   I am a forth year geography student at University of California, Santa Barbara. 
+   
+   Through out my life, geography has been an interesting subject to me. As I am taking geographical information system course(Geog176A), I found out that coding made data analysis so much easier. I am now able to analyze some data and put them into figures through **Rstudio**.
 
-  As an immigrant, my family moved to Los Angeles over 10 years ago from Shanghai, China. Unlike other immigrants had culture shocks on tipping or not much high rise, I was shocked by how big the Chinese community is in Los Angeles. Now that I have been living here for quite a time, I still love exploring the city, the culture, the language and the people. 
+<center> 
+**Contact me**
+</center>
+<center> 
+[Facebook](https://www.facebook.com/chelsey.y.su) 
+</center>
+<center> 
+[Instagram](https://www.instagram.com/suchaoxi/?hl=en)
+</center>
+<center> 
+chelsey5620@gmail.com
+</center>
+<center> 
+**My projects**
+</center>
+<center> 
+[GitHub](https://https://github.com/suchaoxi)
+</center>
 
-Find me on [Facebook](https://www.facebook.com/chelsey.y.su) or [Instagram](https://www.instagram.com/suchaoxi/?hl=en)
 
 Here's a photo of me.
 

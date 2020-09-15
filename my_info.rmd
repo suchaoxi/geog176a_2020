@@ -1,17 +1,32 @@
 ---
 title: "Chelsey Su"
 ---
-##### Birthday
-- Nov. 13
 
-##### Pronoun
-- She, her, her
+chelsey5620@gmail.com
 
-##### Education
+---
+
+### Education
 - Mark Keppel High school - 2013
-- UC Santa Barbara - current
+- UC Santa Barbara - Geography B.A. - Current
 
-##### Experience
-- Born and raised in Shanghai, China
-- Moved to California, the United States in **2010**
-- Based in Santa Barbara currently
+---
+
+### Experience
+##### **Din Tai Fung** | Waitress | April 2018 – September 2018
+- Customer service
+- Food serving and running
+- Embracing food culture.
+
+##### **Mian Taste** | Waitress | January 2016 – August 2017
+- Cashier
+- Dealing with conflict management
+- Serving customer one to one by providing extraordinary and personalized customer service.
+
+---
+
+### Skills
+* Language: R
+* Analysis: tidyverse
+* Visualization: ggplot
+* Development: RMarkdown, Github
