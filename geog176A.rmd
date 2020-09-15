@@ -6,12 +6,12 @@ As a grography major, I took this GIS class as a requirement. I didn't know how 
 
 ---
 
-## [my project website](https://suchaoxi.github.io/geog176a_2020/index.html)
+## [my project website]
 
 - I learned how to create new files/directory from a different route.
 - I learned how to built a static users site with Gibhub Pages.
 - I learned how to includes a github repo fro access to all the code.
-111
+
 ---
 
 ## [Exploring Covid-19 Data](https://suchaoxi.github.io/geog-176A-labs/lab-02.html)
