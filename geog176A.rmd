@@ -3,7 +3,7 @@ title: "Projects"
 ---
 
 As a grography major, I took this GIS class as a requirement. I didn't know how powerful it is until I got my hands on it. 
-111
+
 ---
 
 ## [my project website](https://suchaoxi.github.io/geog176a_2020/index.html)
